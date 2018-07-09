@@ -1,0 +1,1 @@
+Adapted from [marcuslange/akka-http-hal](https://github.com/marcuslange/akka-http-hal)
