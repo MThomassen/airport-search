@@ -90,12 +90,12 @@ Currently, data is only provided in `application/json` encoding
 
 Example usage:
 ```bash
-$ curl localhost:8080/api/v01/report?r=MostCommonRunwayIdentifiactions | jq -c
+$ curl localhost:8080/api/v01/report?r=CountriesHighestNumAirports | jq -c
 ```
 
 Response
 ```json
-{"name":"CountriesHighestNumAirports","headers":["country_name","num_airports"],"data":[["United States","21501"],["Brazil","3839"],["Canada","2454"],["Australia","1908"],["Russia","920"],["France","789"],["Argentina","713"],["Germany","703"],["Colombia","700"],["Venezuela","592"]]}
+{"reportName":"CountriesHighestNumAirports","headers":["country_name","num_airports"],"data":[["United States","21501"],["Brazil","3839"],["Canada","2454"],["Australia","1908"],["Russia","920"],["France","789"],["Argentina","713"],["Germany","703"],["Colombia","700"],["Venezuela","592"]]}
 ```
 
 #### Starting the application
