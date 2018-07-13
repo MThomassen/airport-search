@@ -66,25 +66,25 @@ object Database extends DatabaseQueries with DatabaseReportQueries
     report match {
       case r @ Report.CountriesHighestNumAirports =>
         Tabular(
-          name = r.toString,
+          reportName = r.toString,
           headers = Seq("country_name", "num_airports"),
           data = ctx.run(countryHighestNumAirportsQry).map(tupleToDataRow)
         )
       case r @ Report.CountriesLowestNumAirports =>
         Tabular(
-          name = r.toString,
+          reportName = r.toString,
           headers = Seq("country_name", "num_airports"),
           data = ctx.run(countryLowestNumAirportsQry).map(tupleToDataRow)
         )
       case r @ Report.CountriesRunwayTypes =>
         Tabular(
-          name = r.toString,
+          reportName = r.toString,
           headers = Seq("country_name", "runway_types"),
           data = ctx.run(countryRunwayTypesQry).map(tupleToDataRow)
         )
       case r @ Report.MostCommonRunwayIdentifiactions =>
         Tabular(
-          name = r.toString,
+          reportName = r.toString,
           headers = Seq("le_ident"),
           data = ctx.run(mostCommonRunwayIdentificationsQry).map(Seq(_))
         )

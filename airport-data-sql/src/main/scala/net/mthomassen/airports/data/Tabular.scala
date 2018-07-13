@@ -1,3 +1,3 @@
 package net.mthomassen.airports.data
 
-case class Tabular(name: String, headers: Seq[String], data: Seq[Seq[String]])
+case class Tabular(reportName: String, headers: Seq[String], data: Seq[Seq[String]])

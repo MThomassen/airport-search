@@ -23,13 +23,13 @@ trait DatabaseReportQueries {
 
   protected val countryLowestNumAirportsQry = quote {
     infix"""
-               SELECT cty.name  AS "_1"
-               ,      COUNT(*)  AS "_2"
+               SELECT cty.name                    AS "_1"
+               ,      COALESCE(COUNT(apt.id), 0)  AS "_2"
                FROM   countries AS cty
-               JOIN   airports  AS apt
+               LEFT OUTER JOIN   airports  AS apt
                       ON (cty.code = apt.iso_country)
                GROUP  BY cty.name
-               ORDER  BY COUNT(*) ASC
+               ORDER  BY COALESCE(COUNT(apt.id), 0) ASC
                LIMIT  10
              """
       .as[Query[(CountryLabel, Int)]]
